@@ -1,0 +1,297 @@
+/**
+ * CodeCraft - Responsive Styles
+ * Author: Bolt
+ * 
+ * This file contains additional responsive styles to complement
+ * the main style.css file.
+ */
+
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* Typography adjustments */
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Hero section */
+  #hero {
+    padding-top: 100px !important;
+    text-align: center;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  /* Services section */
+  .service-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Work section */
+  .filter-btn {
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  /* Testimonials */
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  
+  /* CTA section */
+  .cta-content h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Team section */
+  .team-card {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Contact section */
+  .contact-form {
+    padding: 1.5rem;
+  }
+  
+  /* Footer */
+  .footer-newsletter form {
+    flex-direction: column;
+  }
+  
+  .footer-newsletter input {
+    border-radius: var(--border-radius);
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-newsletter button {
+    border-radius: var(--border-radius);
+    width: 100%;
+  }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Hero section */
+  #hero {
+    padding-top: 100px;
+    text-align: center;
+  }
+  
+  /* Services grid */
+  .service-card {
+    min-height: 300px;
+  }
+  
+  /* Team section */
+  .team-card {
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Navbar */
+  .navbar-collapse {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+  }
+  
+  /* Hero section */
+  #hero h1 {
+    font-size: 2.75rem;
+  }
+  
+  /* Services section */
+  .service-card {
+    min-height: 320px;
+  }
+  
+  /* Work section */
+  .work-swiper {
+    padding-bottom: 3rem;
+  }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Services section */
+  .service-card {
+    min-height: 300px;
+  }
+  
+  /* Hero section */
+  #hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+  
+  /* Hero section */
+  #hero h1 {
+    font-size: 3.5rem;
+  }
+  
+  /* Services section */
+  .service-card {
+    min-height: 280px;
+  }
+}
+
+/* Custom Media Queries for Specific Components */
+
+/* Portfolio Grid - 3 columns on medium, 2 on small, 1 on extra small */
+@media (max-width: 767.98px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Technologies Grid - 4 cols to 2 cols on mobile */
+@media (max-width: 767.98px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Print Styles for Accessibility */
+@media print {
+  /* Hide unnecessary elements */
+  header, footer, #cta, .back-to-top, .social-links, .hero-buttons, 
+  .work-links, .team-social, .contact-form, .footer-newsletter {
+    display: none !important;
+  }
+  
+  /* Ensure text is visible */
+  body {
+    color: #000;
+    background: #fff;
+    font-size: 12pt;
+  }
+  
+  /* Make links obvious */
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    color: #333;
+  }
+  
+  /* Remove shadows and effects */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Adjust margins for paper */
+  @page {
+    margin: 2cm;
+  }
+}
+
+/* Dark Mode Support for OS Setting */
+@media (prefers-color-scheme: dark) {
+  body.respect-dark-mode {
+    --gray-100: #1F1F1F;
+    --gray-200: #2D2D2D;
+    --gray-300: #3D3D3D;
+    --gray-800: #E0E0E0;
+    --gray-900: #F0F0F0;
+    
+    color: #E0E0E0;
+    background-color: #121212;
+  }
+  
+  body.respect-dark-mode .bg-light {
+    background-color: #1A1A1A !important;
+  }
+  
+  body.respect-dark-mode .card,
+  body.respect-dark-mode .service-card,
+  body.respect-dark-mode .team-card,
+  body.respect-dark-mode .work-card,
+  body.respect-dark-mode .testimonial-card,
+  body.respect-dark-mode .contact-form {
+    background-color: #2D2D2D;
+    border-color: #3D3D3D;
+  }
+  
+  body.respect-dark-mode #header {
+    background: rgba(18, 18, 18, 0.95);
+  }
+  
+  body.respect-dark-mode #header.header-scrolled {
+    background: #121212;
+  }
+}
+
+/* High Contrast Mode for Accessibility */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: #0000EE;
+    --primary-dark: #0000CC;
+    --error: #FF0000;
+    --success: #008000;
+    --warning: #BB5500;
+  }
+  
+  body {
+    color: #000000;
+    background-color: #FFFFFF;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  .navbar-brand, h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+  
+  .bg-light {
+    background-color: #F8F8F8 !important;
+  }
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .swiper-slide {
+    transition: none !important;
+  }
+  
+  /* Disable parallax effects */
+  #hero, #cta {
+    background-attachment: initial !important;
+  }
+}
